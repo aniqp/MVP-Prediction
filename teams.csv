@@ -1032,3 +1032,73 @@
 15,33,39,.458,9.0,111.1,112.8,-1.58,2021,San Antonio Spurs
 16,31,41,.431,11.0,114.6,114.9,-0.20,2021,New Orleans Pelicans
 17,17,55,.236,25.0,108.8,116.7,-7.50,2021,Houston Rockets
+0,51,31,.622,—,111.8,104.5,7.02,2022,Boston Celtics*
+1,51,31,.622,—,109.9,107.3,2.57,2022,Philadelphia 76ers*
+2,48,34,.585,3.0,109.4,107.1,2.38,2022,Toronto Raptors*
+3,44,38,.537,7.0,112.9,112.1,0.82,2022,Brooklyn Nets*
+4,37,45,.451,14.0,106.5,106.6,-0.01,2022,New York Knicks
+5,Central Division,Central Division,Central Division,Central Division,Central Division,Central Division,Central Division,2022,Central Division
+6,51,31,.622,—,115.5,112.1,3.22,2022,Milwaukee Bucks*
+7,46,36,.561,5.0,111.6,112.0,-0.38,2022,Chicago Bulls*
+8,44,38,.537,7.0,107.8,105.7,2.04,2022,Cleveland Cavaliers
+9,25,57,.305,26.0,111.5,114.9,-3.26,2022,Indiana Pacers
+10,23,59,.280,28.0,104.8,112.5,-7.36,2022,Detroit Pistons
+11,Southeast Division,Southeast Division,Southeast Division,Southeast Division,Southeast Division,Southeast Division,Southeast Division,2022,Southeast Division
+12,53,29,.646,—,110.0,105.6,4.23,2022,Miami Heat*
+13,43,39,.524,10.0,113.9,112.4,1.55,2022,Atlanta Hawks*
+14,43,39,.524,10.0,115.3,114.9,0.53,2022,Charlotte Hornets
+15,35,47,.427,18.0,108.6,112.0,-3.23,2022,Washington Wizards
+16,22,60,.268,31.0,104.2,112.2,-7.67,2022,Orlando Magic
+0,Northwest Division,Northwest Division,Northwest Division,Northwest Division,Northwest Division,Northwest Division,Northwest Division,2022,Northwest Division
+1,49,33,.598,—,113.6,107.6,5.67,2022,Utah Jazz*
+2,48,34,.585,1.0,112.7,110.4,2.16,2022,Denver Nuggets*
+3,46,36,.561,3.0,115.9,113.3,2.53,2022,Minnesota Timberwolves*
+4,27,55,.329,22.0,106.2,115.1,-8.55,2022,Portland Trail Blazers
+5,24,58,.293,25.0,103.7,111.8,-7.90,2022,Oklahoma City Thunder
+6,Pacific Division,Pacific Division,Pacific Division,Pacific Division,Pacific Division,Pacific Division,Pacific Division,2022,Pacific Division
+7,64,18,.780,—,114.8,107.3,6.94,2022,Phoenix Suns*
+8,53,29,.646,11.0,111.0,105.5,5.52,2022,Golden State Warriors*
+9,42,40,.512,22.0,108.4,108.4,0.09,2022,Los Angeles Clippers
+10,33,49,.402,31.0,112.1,115.1,-3.08,2022,Los Angeles Lakers
+11,30,52,.366,34.0,110.3,115.8,-5.26,2022,Sacramento Kings
+12,Southwest Division,Southwest Division,Southwest Division,Southwest Division,Southwest Division,Southwest Division,Southwest Division,2022,Southwest Division
+13,56,26,.683,—,115.6,109.9,5.37,2022,Memphis Grizzlies*
+14,52,30,.634,4.0,108.0,104.7,3.12,2022,Dallas Mavericks*
+15,36,46,.439,20.0,109.3,110.3,-0.84,2022,New Orleans Pelicans*
+16,34,48,.415,22.0,113.2,113.0,0.02,2022,San Antonio Spurs
+17,20,62,.244,36.0,109.7,118.2,-8.26,2022,Houston Rockets
+0,22,8,.733,—,119.1,112.8,6.21,2023,Boston Celtics (1)
+1,18,12,.600,4.0,112.7,111.1,1.69,2023,Brooklyn Nets (4)
+2,16,12,.571,5.0,111.4,108.1,2.84,2023,Philadelphia 76ers (5)
+3,16,13,.552,5.5,114.3,112.4,2.16,2023,New York Knicks (6)
+4,13,16,.448,8.5,111.5,110.8,0.66,2023,Toronto Raptors (10)
+5,Central Division,Central Division,Central Division,Central Division,Central Division,Central Division,Central Division,2023,Central Division
+6,20,8,.714,—,112.2,108.8,2.85,2023,Milwaukee Bucks (2)
+7,19,11,.633,2.0,110.9,104.8,5.56,2023,Cleveland Cavaliers (3)
+8,15,15,.500,6.0,114.9,115.8,-1.78,2023,Indiana Pacers (8)
+9,11,17,.393,9.0,112.8,113.8,-0.07,2023,Chicago Bulls (11)
+10,8,23,.258,13.5,111.0,117.7,-5.36,2023,Detroit Pistons (14)
+11,Southeast Division,Southeast Division,Southeast Division,Southeast Division,Southeast Division,Southeast Division,Southeast Division,2023,Southeast Division
+12,15,15,.500,—,108.0,109.2,-1.59,2023,Miami Heat (7)
+13,15,15,.500,—,113.9,115.0,-1.05,2023,Atlanta Hawks (9)
+14,11,18,.379,3.5,111.0,113.9,-2.88,2023,Washington Wizards (12)
+15,10,20,.333,5.0,109.4,113.5,-3.72,2023,Orlando Magic (13)
+16,7,22,.241,7.5,110.1,117.3,-7.24,2023,Charlotte Hornets (15)
+0,Northwest Division,Northwest Division,Northwest Division,Northwest Division,Northwest Division,Northwest Division,Northwest Division,2023,Northwest Division
+1,17,11,.607,—,115.7,114.8,0.20,2023,Denver Nuggets (3)
+2,16,13,.552,1.5,112.5,112.3,0.40,2023,Portland Trail Blazers (6)
+3,17,14,.548,1.5,117.9,115.8,2.52,2023,Utah Jazz (7)
+4,14,15,.483,3.5,114.2,115.9,-2.49,2023,Minnesota Timberwolves (10)
+5,11,18,.379,6.5,115.3,117.2,-1.89,2023,Oklahoma City Thunder (13)
+6,Pacific Division,Pacific Division,Pacific Division,Pacific Division,Pacific Division,Pacific Division,Pacific Division,2023,Pacific Division
+7,17,12,.586,—,115.3,110.7,4.51,2023,Phoenix Suns (4)
+8,16,12,.571,0.5,117.8,115.5,2.38,2023,Sacramento Kings (5)
+9,17,14,.548,1.0,107.2,108.1,-1.58,2023,Los Angeles Clippers (8)
+10,14,16,.467,3.5,117.0,116.8,0.44,2023,Golden State Warriors (11)
+11,12,16,.429,4.5,115.4,116.3,-1.12,2023,Los Angeles Lakers (12)
+12,Southwest Division,Southwest Division,Southwest Division,Southwest Division,Southwest Division,Southwest Division,Southwest Division,2023,Southwest Division
+13,19,9,.679,—,116.5,111.3,4.93,2023,Memphis Grizzlies (1)
+14,18,10,.643,1.0,117.4,111.8,5.60,2023,New Orleans Pelicans (2)
+15,15,14,.517,4.5,111.8,109.9,2.60,2023,Dallas Mavericks (9)
+16,9,19,.321,10.0,110.2,120.4,-9.99,2023,San Antonio Spurs (14)
+17,9,19,.321,10.0,110.2,115.4,-4.63,2023,Houston Rockets (15)

@@ -1,0 +1,31 @@
+<!-- index will pull in code from base template whenever it is rendered -->
+
+{% extends "parent_templates/template.html" %}
+
+<!-- Title block in template.html -->
+{% block title %}NBA MVP Ladder{% endblock %}
+
+<!-- what we put into block main will be plugged into the respective main section in template.html -->
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>NBA MVP Prediction Ladder</h1>
+      <hr>
+
+      
+      <form action="/" method="POST">
+
+        <div class="form-group">
+            <label>Click the refresh button to obtain this week's data!</label>
+
+        </div>
+
+        <button type = "submit" class="btn btn-primary">Refresh Weekly Data</button>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
