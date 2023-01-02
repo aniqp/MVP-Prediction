@@ -6,47 +6,45 @@ This app predicts the top 10 most likely players to win the MVP award for the cu
 
 ![NBA MVP Prediction Project Screenshot](https://user-images.githubusercontent.com/89875233/210190132-4ad12849-1cc2-4d3a-a104-abb17e6b7d3d.png)
 
+## Motivation For Project
 
-Given that there is a strong correlation between an individual's stats (i.e. PPG, RPG, APG, W/L%) and their
+It is generally understood that a player's individual stats play an important role in their perception as the most valuable player of the season. In many past seasons, the MVP has been the most statistically-dominant player. However, it is also understood that a team's wins are an important consideration as well. If a player is performing well individually, but it doesn't translate to wins, their efforts might not be considered as valuable. As such, I wanted to see if these stats would be good predictors for the number of shares that a player received throughout a season.
 
-Data is scraped from the NBA Stats API using Python's requests library to gain information about players' season averages and their statlines per game. A SQL database enables authentication and the creation of user accounts, as well as storage of user bets and each bet's corresponding information.
+## Data Exploration
 
-# Getting Started
+To get an idea of feature importance, I created a correlation matrix for all the features and observed which were the strongest.
 
-## Installing pip
-First, make sure you have ```pip``` installed on your system. Run the following command to display the current version of ```pip``` installed on your system:
+![image](https://user-images.githubusercontent.com/89875233/210193556-d293e2a7-46e8-4bf1-b19f-226865b1f732.png)
 
-* Windows: ```py -m pip --version```
+The most features with the strongest correlation with MVP shares seem to be win shares, player efficiency rating, box plus minus and points. These make sense since a player's influence on winning, and their efficiency and effectiveness in doing so are good marks for an MVP.
 
-* Unix/MacOS: ```python3 -m pip install --user virtualenv```
+This is confirmed by a plot of the mutual information scores for the predictor variables, and the target variable, share percentage:
 
-## Installing and creating a virtual environment
-Install virtual environments with the following:
+![image](https://user-images.githubusercontent.com/89875233/210194068-b3f3d5f7-2593-4af5-864d-10122fb99ffc.png)
 
-* Windows: ```py -m pip install --user virtualenv```
+## Error Metric
 
-* Unix/MacOS ```python3 -m pip install --user virtual env```
+Typical error metrics, such as MAE, R^2 and RMSE in this case would not be as effective, since the vast majority of players receive 0 MVP votes, and we don't want to give the model a high score for predicting this. I defined a custom error metric that scores the model based on how well it predicts the top 10 candidates for MVP, as these are the individuals that we want to prioritize while ranking. This metric was called mean average precision.
 
-Next, create a virtual environment by executing the following code in the project's root directory:
+## Model Selection
 
-* Windows: ```py -m venv env```
+There were 3 candidates to be used for the model:
 
-* Unix/MacOS: ```python3 -m venv env```
+- Multiple Linear Regression
+- Random Forest
+- XGBoost
 
-To activate the environment, run ```env\Scripts\activate``` on Windows and ```source env/bin/activate``` for Unix/MacOS.
+Each model was trained through a backtesting process; that is, testing on one year of data after training on all the prior years of data, then including that year of testing in the next iteration of training data. As such, the training window is constantly expaning to predict the MVP for the next season. This prevents overfitting by ensuring that future information about MVPs is not used in predicting MVPs from the past. Through many iterations of manual feature selection by intuition, and hyperparameter tuning through GridSearchCV with a Time Series Split, the model with the best mean average precision was XGBoost with the following parameters:
 
-To install the packages required for the project, run ```py -m pip install -r requirements.txt``` on Windows and ```python3 -m pip install -r requirements.txt``` on Unix/MacOS.
+```{n_estimators=16, max_depth=5, learning_rate = 0.2745, subsample=1, colsample_bytree=1}```
 
-## Usage Guide
-In the terminal, run the ```flask run``` command. Click the link provided by the ```Running on:``` statement in the terminal to open the site. To get started, choose a game that you'd like to bet on. 
+This model was then used in predicting the most likely MVP candidates for the 2022-2023 season. As of 2022-12-25, the top 5 MVP candidates are:
 
-![NBA Betting Demo1](game_demo.png)
+1. Giannis Antetokounmpo
+2. Luka Doncic
+3. Nikola Jokic
+4. Joel Embiid
+5. Jayson Tatum
 
-Select any number of the bets you'd like to make by clicking either yes/no, and using the slider to make a wager of how many coins you'd like to bet.
 
-![NBA Betting Demo2](bet_game_demo.png)
-
-
-Once you've submitted your bet, you can check the status of the bet and see if you've won! Successful bets will give you twice as many coins as you wagered.
-
-![NBA Betting Demo3](bet_demo.png)
+It will be interesting to follow the model's predictions as the 2022-23 NBA season progresses, and we gain more data about who is the league's most valuable player.
