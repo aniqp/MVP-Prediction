@@ -8,7 +8,7 @@ This app predicts the top 10 most likely players to win the MVP award for the cu
 
 ## Motivation For Project
 
-It is generally understood that a player's individual stats play an important role in their perception as the most valuable player of the season. In many past seasons, the MVP has been the most statistically-dominant player. However, it is also understood that a team's wins are an important consideration as well. If a player is performing well individually, but it doesn't translate to wins, their efforts might not be considered as valuable. As such, I wanted to see if these stats would be good predictors for the number of shares that a player received throughout a season.
+It is generally understood that a player's individual stats play an important role in their perception as the most valuable player of the season. In many past seasons, the MVP has been the most statistically-dominant player. However, it is also understood that a team's wins are an important consideration as well. If a player is performing well individually, but their team isn't winning games, their efforts might not be considered as valuable. As such, I wanted to see if these stats would be good predictors for the number of shares that a player received throughout a season.
 
 Additionally, I wanted to be able to track this without having to run a manual refresh of the webscraping, data processing and machine learning processes. Since the raw data is stored in JSON files, I stored this information through a data pipeline that extracts, transforms and loads the data into a MongoDB database, that is eventually used to input data into the model.
 
