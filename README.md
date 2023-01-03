@@ -36,7 +36,11 @@ There were 3 candidates to be used for the model:
 - Random Forest
 - XGBoost
 
-Each model was trained through a backtesting process; that is, testing on one year of data after training on all the prior years of data, then including that year of testing in the next iteration of training data. As such, the training window is constantly expaning to predict the MVP for the next season. This prevents overfitting by ensuring that future information about MVPs is not used in predicting MVPs from the past. Through many iterations of manual feature selection by intuition, and hyperparameter tuning through GridSearchCV with a Time Series Split, the model with the best mean average precision was XGBoost with the following parameters:
+Each model was trained through a backtesting process; that is, testing on one year of data after training on all the prior years of data, then including that year of testing in the next iteration of training data. As such, the training window is constantly expaning to predict the MVP for the next season. This prevents overfitting by ensuring that future information about MVPs is not used in predicting MVPs from the past. 
+
+![image](https://user-images.githubusercontent.com/89875233/210304761-d23d7b8a-6b76-4b9a-827f-b003e63814be.png)
+
+Through many iterations of manual feature selection by intuition, and hyperparameter tuning through GridSearchCV with a Time Series Split, the model with the best mean average precision was XGBoost with the following parameters:
 
 ```{n_estimators=16, max_depth=5, learning_rate = 0.2745, subsample=1, colsample_bytree=1}```
 
