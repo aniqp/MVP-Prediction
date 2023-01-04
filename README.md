@@ -4,8 +4,6 @@
 
 This app predicts the top 10 most likely players to win the MVP award for the current NBA season. Individual player data from the last 40 years is scraped from the BasketballReference website in JSON format, cleaned, and stored in a MongoDB database. Next, when the user wishes to predict the MVP ladder for this season, a machine learning model is run on the data to predict the percentage of MVP shares that a player will win - the higher the number of shares, the higher on the MVP ladder they are. The players with the top 10 highest predicted shares are displayed on a Flask app, and the data may be refreshed on the app's home page.
 
-![NBA MVP Prediction Project Screenshot](https://user-images.githubusercontent.com/89875233/210190132-4ad12849-1cc2-4d3a-a104-abb17e6b7d3d.png)
-
 ## Motivation For Project
 
 It is generally understood that a player's individual stats play an important role in their perception as the most valuable player of the season. In many past seasons, the MVP has been the most statistically-dominant player. However, it is also understood that a team's wins are an important consideration as well. If a player is performing well individually, but their team isn't winning games, their efforts might not be considered as valuable. As such, I wanted to see if these stats would be good predictors for the number of shares that a player received throughout a season.
@@ -52,5 +50,8 @@ This model was then used in predicting the most likely MVP candidates for the 20
 4. Joel Embiid
 5. Jayson Tatum
 
+The full list of MVP candidates can be found on the web app:
+
+![NBA MVP Prediction Project Screenshot](https://user-images.githubusercontent.com/89875233/210190132-4ad12849-1cc2-4d3a-a104-abb17e6b7d3d.png)
 
 It will be interesting to follow the model's predictions as the 2022-23 NBA season progresses, and we gain more data about who is the league's most valuable player.
