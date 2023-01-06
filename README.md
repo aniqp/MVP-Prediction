@@ -24,7 +24,9 @@ This is confirmed by a plot of the mutual information scores for the predictor v
 
 ## Error Metric
 
-Typical error metrics, such as MAE, R^2 and RMSE in this case would not be as effective, since the vast majority of players receive 0 MVP votes, and we don't want to give the model a high score for predicting this. I defined a custom error metric that scores the model based on how well it predicts the top 10 candidates for MVP, as these are the individuals that we want to prioritize while ranking. This metric was called mean average precision.
+Typical error metrics, such as MAE, R^2 and RMSE in this case would not be as effective, since the vast majority of players receive 0 MVP votes, and we don't want to give the model a high score for predicting this. I defined a custom error metric that scores the model based on how well it predicts the top 10 candidates for MVP, as these are the individuals that we want to prioritize while ranking. 
+
+This metric compares a model's predictions to the actual top 10 MVP rankings from a specific year. If the prediction correctly selects a player who was actually in the top 10 candidates that year, it gets a 100% score for that player. If it does not correctly capture a player who was in the top 10, the score for that player gets worse and worse depending on how far out of the top 10 they were predicted to be. Ten scores are captured (one for each player), and the final metric is the average of these scores (called mean average precision).
 
 ## Model Selection
 
