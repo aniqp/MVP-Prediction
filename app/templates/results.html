@@ -1,0 +1,49 @@
+<!-- index will pull in code from base template whenever it is rendered -->
+
+{% extends "parent_templates/template.html" %}
+
+<!-- Title block in template.html -->
+{% block title %}NBA MVP Predictions{% endblock %}
+
+<!-- what we put into block main will be plugged into the respective main section in template.html -->
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>MVP Ladder</h1>
+      <!-- <img style="max-width: 100px" src="{{ url_for('static', filename='logos/raptors_logo.png') }}"> -->
+      <h1>HI</h1>
+      <hr>
+
+      <form action="/" method="POST">
+
+        <div class="form-group">
+            <label>Click this button to see who the MVP candidates for this week are!</label>
+
+        </div>
+
+        <button type = "submit" class="btn btn-primary">Get top 5 MVP candidates</button>
+       
+        <ul>
+          <h2>#1</h2>
+          <img src = "{{ url_for('static', filename='GiannisAntetokounmpo') }}" alt = 'Giannis Antetokounmpo'>
+          <br>
+          <h2>#2</h2>
+          <img src = 'Pictures\LukaDoncic.png' alt = 'Luka Doncic'>
+          <br>
+          <h2>#3</h2>
+          <img src = 'Pictures\JoelEmbiid.png' alt = 'Joel Embiid'>
+          <br>
+          <h2>#4</h2>
+          <img src = 'Pictures\NikolaJokic.png' alt = 'Nikola Jokic'>
+          <br>
+          <h2>#5</h2>
+          <img src = 'Pictures\AnthonyDavis.png' alt = 'Anthony Davis'>
+          <br>
+        </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
