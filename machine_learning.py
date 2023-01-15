@@ -29,24 +29,3 @@ def get_top_10():
        predictions = pd.DataFrame(predictions, columns = ['predictions'], index = test.index)
        combination = pd.concat([test[["Player", "Share"]], predictions], axis = 1)
        return combination.sort_values("predictions", ascending = False).head(10)['Player'].values
-# def find_average_precision_new():
-#     # Take the top 5 MVP winners
-#     actual = actual_mvp
-#     predicted = combination.sort_values("predictions", ascending = False)
-#     ps = []
-#     found = 0
-#     seen = 1
-#     # if predicted player is in top 10, we get 100%, but if not, then penalize based on how far off
-#     # biased towards top of the ranking (rank in top 10 a lot more important than rank outside)
-#     for index, row in predicted.iterrows():        
-#         if row["Player"] in actual['Player'].values:
-#             found += 1
-#             print(f'found: {found}, seen: {seen}')            
-#             ps.append(found/seen)
-#         seen += 1
-#     return ps, (sum(ps) / len(ps))
-
-# predictions = ['Luka Dončić', 'Giannis Antetokounmpo', 'Joel Embiid', 'Nikola Jokić', 'Anthony Davis', 'Kevin Durant', 'Shai Gilgeous-Alexander', 'Stephen Curry',
-# 'Jayson Tatum', 'Ja Morant']
-
-# print(predictions)
