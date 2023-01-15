@@ -1,3 +1,11 @@
 config.py
 venv/
 mvps.csv
+new_test_data.csv
+nicknames.csv
+player_2023.csv
+player_mvp_stats_2023.csv
+player_mvp_stats.csv
+players.csv
+teams_2023.csv
+teams.csv
