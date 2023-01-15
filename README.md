@@ -4,7 +4,7 @@
 
 This app predicts the top 10 most likely players to win the MVP award for the current NBA season. Individual player data from the last 40 years is scraped from the BasketballReference website in JSON format, cleaned, and stored in a MongoDB database. Next, when the user wishes to predict the MVP ladder for this season, a machine learning model is run on the data to predict the percentage of MVP shares that a player will win - the higher the number of shares, the higher on the MVP ladder they are. The players with the top 10 highest predicted shares are displayed on a Streamlit app, and the data may be refreshed on the app's home page.
 
-https://user-images.githubusercontent.com/89875233/211982457-36cef56d-39fb-481a-9d87-b71217c7b874.mp4
+https://user-images.githubusercontent.com/89875233/212566852-5272b5cd-e19c-4d78-95cb-291d608d05d1.mp4
 
 ## Motivation For Project
 
