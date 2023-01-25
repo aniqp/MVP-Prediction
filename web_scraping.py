@@ -2,8 +2,13 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
-import time
-driver = webdriver.Chrome(executable_path = "C:/Users/aniqp/Documents/chromedriver_win32/chromedriver.exe")
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-certificate-errors')
+options.add_argument('--ignore-ssl-errors')
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(chrome_options=options, service = service)
 import time
 
 def get_player_stats():
