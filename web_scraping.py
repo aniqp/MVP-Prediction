@@ -4,11 +4,19 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+import streamlit as st
 options = webdriver.ChromeOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--ignore-ssl-errors')
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(chrome_options=options, service = service)
+
+def get_driver():
+    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+options.add_argument('--disable-gpu')
+options.add_argument('--headless')
+
+driver = get_driver()
+
+
 import time
 
 def get_player_stats():
