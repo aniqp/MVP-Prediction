@@ -8,11 +8,11 @@ import streamlit as st
 options = webdriver.ChromeOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--ignore-ssl-errors')
+options.add_argument('--disable-gpu')
+options.add_argument('--headless')
 
 def get_driver():
     return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-options.add_argument('--disable-gpu')
-options.add_argument('--headless')
 
 driver = get_driver()
 
