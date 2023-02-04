@@ -39,9 +39,11 @@ def get_player_stats():
     player_2023 = pd.read_html(str(player_table))[0]
     player_2023["Year"] = 2023
 
-    print(player_2023)
+    return player_2023
 
-    player_2023.to_csv("player_2023.csv")
+    # print(player_2023)
+
+    # player_2023.to_csv("player_2023.csv")
 
 def get_team_stats():
     team_stats_url = "https://www.basketball-reference.com/leagues/NBA_2023_standings.html"
@@ -80,12 +82,13 @@ def get_team_stats():
 
     teams_2023['Team'] = teams_2023['Team'].apply(lambda x: x[:get_ind_not_alpha(x)])
 
-    print(teams_2023)
+    return teams_2023
+    # print(teams_2023)
 
-    teams_2023.to_csv("teams_2023.csv")
+    # teams_2023.to_csv("teams_2023.csv")
 
 def clean_data():
-    players = pd.read_csv("player_2023.csv")
+    players = get_player_stats()
     del players["Unnamed: 0"]
     del players["Rk"]
     players['Player'] = players["Player"].str.replace("*", "", regex = False)
@@ -105,7 +108,7 @@ def clean_data():
 
     players[['Pts Won', 'Pts Max', 'Share']] = 0
 
-    teams = pd.read_csv("teams_2023.csv")
+    teams = get_team_stats()
     teams = teams[~teams["W"].str.contains("Division")]
     teams["Team"] = teams["Team"].str.replace("*", "", regex = False)
     nicknames = {}
@@ -122,9 +125,6 @@ def clean_data():
     stats["GB"] = stats['GB'].str.replace("—", "0")
     stats['GB'] = pd.to_numeric(stats["GB"])
     stats.to_csv("player_mvp_stats_2023.csv", index = False)
-
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
 
 def get_top_10():
 
