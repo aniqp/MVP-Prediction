@@ -15,15 +15,15 @@ mvp_collection = db.MVP
 players_2023_stats = pd.read_csv("player_mvp_stats_2023.csv")
 players_2023_stats[~players_2023_stats['Player'].isna()]
 
-def update_player_data():
+def update_player_data(new_data):
 
     player_list = []
 
-    for i in range(len(players_2023_stats)):
-        player = players_2023_stats['Player'].iloc[i]
+    for i in range(len(new_data)):
+        player = new_data['Player'].iloc[i]
         player_list.append({player : {}})
-        for column in players_2023_stats.columns.delete(0):
-            player_list[i][player][column] = players_2023_stats[column].iloc[i]
+        for column in new_data.columns.delete(0):
+            player_list[i][player][column] = new_data[column].iloc[i]
 
     requests = []
     for player in player_list:
@@ -71,15 +71,15 @@ def update_player_data():
     results = mvp_collection.bulk_write(requests)
     return results
 
-def get_player_data():
+def get_2023_player_data():
     documents_to_find = {'Year': {'$eq' : 2023}}
     result = mvp_collection.find(documents_to_find)
     return result
 
+def get_player_data():
+    documents_to_find = {'Year': {'lt' : 2023}}
+    result = mvp_collection.find(documents_to_find)
+    return result
+
 cursor = get_player_data()
-
-list = []
-for document in cursor:
-    list.append(document)
-
-new_test_data = pd.DataFrame(list)
+print(cursor)

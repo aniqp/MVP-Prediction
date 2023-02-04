@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import streamlit as st
+from connection import *
 options = webdriver.ChromeOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--ignore-ssl-errors')
@@ -89,7 +90,7 @@ def get_team_stats():
 
 def clean_data():
     players = get_player_stats()
-    del players["Unnamed: 0"]
+    # del players["Unnamed: 0"]
     del players["Rk"]
     players['Player'] = players["Player"].str.replace("*", "", regex = False)
     def single_row(df):
@@ -120,18 +121,21 @@ def clean_data():
             nicknames[abbrev] = name
     players["Team"] = players["Tm"].map(nicknames)
     stats = players.merge(teams, how = "outer", on = ["Team", "Year"])
-    del stats["Unnamed: 0"]
+    # del stats["Unnamed: 0"]
     stats = stats.apply(pd.to_numeric, errors = "ignore")
     stats["GB"] = stats['GB'].str.replace("—", "0")
     stats['GB'] = pd.to_numeric(stats["GB"])
-    stats.to_csv("player_mvp_stats_2023.csv", index = False)
+    
+    return stats
 
 def get_top_10():
 
-       stats = pd.read_csv("player_mvp_stats.csv")
-       stats_2023 = pd.read_csv("player_mvp_stats_2023.csv")
+       stats = pd.DataFrame(get_player_data())
+       stats_2023 = pd.DataFrame(get_2023_player_data())
        stats = stats.fillna(0)
        stats_2023 = stats_2023.fillna(0)
+
+       print(stats)
        stats['Age'] = stats['Age'].astype(int)
        # Numeric columns are the ones we want to use as predictors. Don't use pts won/pts max/share - these are very related with what we are trying to predict (overfitting)
        predictors = ['FG', 'FGA', '3P',
@@ -160,7 +164,6 @@ def get_top_10():
 
 
 def combine_scrape():
-    get_player_stats()
-    get_team_stats
-    clean_data()
+    update_player_data(clean_data())
+
 print(get_top_10())
