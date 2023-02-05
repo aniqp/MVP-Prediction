@@ -14,15 +14,11 @@ Additionally, I wanted to be able to track this without having to run a manual r
 
 ## Data Exploration
 
-To get an idea of feature importance, I created a correlation matrix for all the features and observed which were the strongest.
+To get an idea of feature importance, I created a correlation matrix for all the features and observed which had the strongest effect on MVP share.
 
-![image](https://user-images.githubusercontent.com/89875233/210193556-d293e2a7-46e8-4bf1-b19f-226865b1f732.png)
+<img width="325" alt="image" src="https://user-images.githubusercontent.com/89875233/216799377-4a6211dc-935b-4bfb-9840-fd95e4a6473e.png">
 
-The most features with the strongest correlation with MVP shares seem to be win shares, player efficiency rating, box plus minus and points. These make sense since a player's influence on winning, and their efficiency and effectiveness in doing so are good marks for an MVP.
-
-This is confirmed by a plot of the mutual information scores for the predictor variables, and the target variable, share percentage:
-
-![image](https://user-images.githubusercontent.com/89875233/210194068-b3f3d5f7-2593-4af5-864d-10122fb99ffc.png)
+The most features with the strongest correlation with MVP shares seem to be free throws, points, two-pointers made, field goals attempted and rebounds. These make sense since aggressive players that tend to score and draw fouls, but also are able to rebound the ball are considered very valuable players (ex. Shaquille O'Neal, Hakeem Olajuwon, James Harden).
 
 ## Error Metric
 
