@@ -14,15 +14,15 @@ Additionally, I wanted to be able to track this without having to run a manual r
 
 ## Data Exploration
 
-To get an idea of feature importance, I created a correlation matrix for all the features and observed which were the strongest.
+To get an idea of feature importance, I created a correlation matrix for all the features and observed which had the strongest effect on MVP share.
 
-![image](https://user-images.githubusercontent.com/89875233/210193556-d293e2a7-46e8-4bf1-b19f-226865b1f732.png)
+<img width="429" alt="image" src="https://user-images.githubusercontent.com/89875233/216799433-b5c37cc7-ea12-4519-93aa-de79860b67a6.png">
 
-The most features with the strongest correlation with MVP shares seem to be win shares, player efficiency rating, box plus minus and points. These make sense since a player's influence on winning, and their efficiency and effectiveness in doing so are good marks for an MVP.
+The most features with the strongest correlation with MVP shares seem to be free throws, points, two-pointers made, field goals attempted and rebounds. These make sense since aggressive players that tend to score and draw fouls, but also are able to rebound the ball are considered very valuable players (ex. Shaquille O'Neal, Hakeem Olajuwon, James Harden).
 
-This is confirmed by a plot of the mutual information scores for the predictor variables, and the target variable, share percentage:
+Additionally, we notice the importance of MVPs making three-pointers over time. As of the year 2015, there was a significant increase in this statistic.
 
-![image](https://user-images.githubusercontent.com/89875233/210194068-b3f3d5f7-2593-4af5-864d-10122fb99ffc.png)
+<img width="429" alt="image" src="https://user-images.githubusercontent.com/89875233/216799571-5716c6cf-1aec-48a6-9bc8-e908a4543a92.png">
 
 ## Error Metric
 
@@ -42,10 +42,8 @@ Each model was trained through a backtesting process; that is, testing on one ye
 
 ![image](https://user-images.githubusercontent.com/89875233/210304761-d23d7b8a-6b76-4b9a-827f-b003e63814be.png)
 
-Through many iterations of manual feature selection by intuition, and hyperparameter tuning through GridSearchCV with a Time Series Split, the model with the best mean average precision was XGBoost with the following parameters:
+Through many iterations of manual feature selection by intuition, and training by backtesting, the model with the best mean average precision was XGBoost. Hyperparameter tuning will be explored in the future, as the process would require significant computational resources due to the amount of data, the nature of the training method, and the number of features involved.
 
-```{n_estimators=16, max_depth=5, learning_rate = 0.2745, subsample=1, colsample_bytree=1}```
-
-This model was then used in predicting the most likely MVP candidates for the 2022-2023 season.
+The XGBoost model was then used in predicting the most likely MVP candidates for the 2022-2023 season.
 
 It will be interesting to follow the model's predictions as the 2022-23 NBA season progresses, and we gain more data about who is the league's most valuable player.
