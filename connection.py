@@ -12,9 +12,6 @@ db = client.MVP_Data
 
 mvp_collection = db.MVP
 
-players_2023_stats = pd.read_csv("player_mvp_stats_2023.csv")
-players_2023_stats[~players_2023_stats['Player'].isna()]
-
 def update_player_data(new_data):
 
     player_list = []
