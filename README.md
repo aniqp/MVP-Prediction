@@ -16,9 +16,13 @@ Additionally, I wanted to be able to track this without having to run a manual r
 
 To get an idea of feature importance, I created a correlation matrix for all the features and observed which had the strongest effect on MVP share.
 
-<img width="325" alt="image" src="https://user-images.githubusercontent.com/89875233/216799377-4a6211dc-935b-4bfb-9840-fd95e4a6473e.png">
+<img width="429" alt="image" src="https://user-images.githubusercontent.com/89875233/216799433-b5c37cc7-ea12-4519-93aa-de79860b67a6.png">
 
 The most features with the strongest correlation with MVP shares seem to be free throws, points, two-pointers made, field goals attempted and rebounds. These make sense since aggressive players that tend to score and draw fouls, but also are able to rebound the ball are considered very valuable players (ex. Shaquille O'Neal, Hakeem Olajuwon, James Harden).
+
+Additionally, we notice the importance of MVPs making three-pointers over time. As of the year 2015, there was a significant increase in this statistic.
+
+<img width="429" alt="image" src="https://user-images.githubusercontent.com/89875233/216799571-5716c6cf-1aec-48a6-9bc8-e908a4543a92.png">
 
 ## Error Metric
 
